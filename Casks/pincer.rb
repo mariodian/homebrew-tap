@@ -11,6 +11,9 @@ cask "pincer" do
 
   app "Pincer.app"
 
+  uninstall quit:  "com.mariodian.pincer",
+            delete: "/Applications/Pincer.app"
+
   zap trash: [
     "~/Library/Application Support/com.mariodian.pincer",
     "~/Library/Caches/com.mariodian.pincer",
