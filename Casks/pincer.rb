@@ -1,6 +1,6 @@
 cask "pincer" do
-  version "0.3.3"
-  sha256 "fdc938ba4645bbe094ebc9f57fb80350fb0b968ed630a93dff8ab63816f02563"
+  version "0.3.4"
+  sha256 "ff528d2eec8ff0319c508e5363ede4d7e4637e8ceaa73f53d18a3ffcaaabd2f9"
 
   url "https://github.com/mariodian/pincer/releases/download/v#{version}/stable-macos-arm64-Pincer.dmg"
   name "Pincer"
@@ -11,8 +11,7 @@ cask "pincer" do
 
   app "Pincer.app"
 
-  uninstall quit:  "com.mariodian.pincer",
-            delete: "/Applications/Pincer.app"
+  uninstall quit: "com.mariodian.pincer"
 
   zap trash: [
     "~/Library/Application Support/com.mariodian.pincer",
