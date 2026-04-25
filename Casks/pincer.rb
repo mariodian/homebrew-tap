@@ -13,6 +13,11 @@ cask "pincer" do
 
   uninstall quit: "com.mariodian.pincer"
 
+  postflight do
+    system_command "/usr/bin/xattr",
+      args: ["-dr", "com.apple.quarantine", "#{appdir}/Pincer.app"]
+  end
+
   zap trash: [
     "~/Library/Application Support/com.mariodian.pincer",
     "~/Library/Caches/com.mariodian.pincer",
