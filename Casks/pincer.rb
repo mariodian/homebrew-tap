@@ -1,6 +1,6 @@
 cask "pincer" do
-  version "0.3.9"
-  sha256 "7ab1a2d311b1aa99efd3110adb459a0d7304f33a0520b32d8d3bdba939712487"
+  version "0.4.0"
+  sha256 "edc8f12c922da43a54ce684d9b5a9788d31663a5ed6468eb018ad8542f59d6ce"
 
   url "https://github.com/mariodian/pincer/releases/download/v#{version}/stable-macos-arm64-Pincer.dmg"
   name "Pincer"
