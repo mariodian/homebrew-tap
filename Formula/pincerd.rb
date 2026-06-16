@@ -8,8 +8,8 @@ class Pincerd < Formula
   depends_on arch: :arm64
 
   def install
-    bin.install "pincerd/pincerd"
-    pkgetc.install "pincerd/drizzle/migrations"
+    bin.install "pincerd"
+    pkgetc.install "drizzle/migrations"
   end
 
   service do
