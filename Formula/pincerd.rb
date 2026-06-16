@@ -23,15 +23,20 @@ class Pincerd < Formula
   def caveats
     <<~EOS
       DAEMON_SECRET must be set before starting the service.
-      Edit the service with:
-        brew services edit pincerd
 
-      Add your secret to the EnvironmentVariables section:
-        <key>DAEMON_SECRET</key>
-        <string>your-secret-here</string>
+      1. Edit the plist:
+           open #{opt_prefix}/homebrew.mxcl.pincerd.plist
 
-      Then start the service:
-        brew services start pincerd
+      2. Add the following BEFORE the closing </dict> tag:
+
+           <key>EnvironmentVariables</key>
+           <dict>
+             <key>DAEMON_SECRET</key>
+             <string>your-secret-here</string>
+           </dict>
+
+      3. Start the service:
+           brew services start pincerd
     EOS
   end
 end
