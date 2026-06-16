@@ -1,0 +1,37 @@
+class Pincerd < Formula
+  desc "Headless Pincer monitoring daemon for local AI agents"
+  homepage "https://github.com/mariodian/pincer"
+  url "https://github.com/mariodian/pincer/releases/download/v0.4.1/pincerd-vVERSION_PLACEHOLDER-macos-arm64.tar.gz"
+  sha256 "c175fa51971ce632ba2997afb90058a9e2602f69816618981f65190f8e78dc01"
+  version "0.4.1"
+
+  depends_on arch: :arm64
+
+  def install
+    bin.install "pincerd/pincerd"
+    pkgetc.install "pincerd/drizzle/migrations"
+  end
+
+  service do
+    run [opt_bin/"pincerd"]
+    keep_alive true
+    working_dir HOMEBREW_PREFIX
+    log_path var/"log/pincerd.log"
+    error_log_path var/"log/pincerd.log"
+  end
+
+  def caveats
+    <<~EOS
+      DAEMON_SECRET must be set before starting the service.
+      Edit the service with:
+        brew services edit pincerd
+
+      Add your secret to the EnvironmentVariables section:
+        <key>DAEMON_SECRET</key>
+        <string>your-secret-here</string>
+
+      Then start the service:
+        brew services start pincerd
+    EOS
+  end
+end
