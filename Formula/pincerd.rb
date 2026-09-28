@@ -1,9 +1,9 @@
 class Pincerd < Formula
   desc "Headless Pincer monitoring daemon for local AI agents"
   homepage "https://github.com/mariodian/pincer"
-  version "0.4.2"
+  version "0.4.3"
   url "https://github.com/mariodian/pincer/releases/download/v#{version}/pincerd-v#{version}-macos-arm64.tar.gz"
-  sha256 "cc56fe41536ba09915a62e9e2845c2287621d973e053474e8db3d45485d3724c"
+  sha256 "779d701c519cd9b1af3d0ffda7c36db31fa9c5241e4d9a181d3848f641d695b7"
 
   depends_on arch: :arm64
 
